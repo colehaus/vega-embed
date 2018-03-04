@@ -1,6 +1,6 @@
 import * as versionCompare from 'compare-versions';
 import * as d3 from 'd3-selection';
-import * as vegaImport from 'vega';
+import * as vegaImport from 'vega-lib';
 import * as VegaLite from 'vega-lite';
 import schemaParser from 'vega-schema-url-parser';
 
@@ -57,7 +57,7 @@ const PREPROCESSOR = {
  *                  Object : The Vega/Vega-Lite specification as a parsed JSON object.
  * @param opt       A JavaScript object containing options for embedding.
  */
-export default function embed(el: HTMLBaseElement | string, spec: any, opt: EmbedOptions): Promise<{ view: any; spec: any; }> {
+export default function embed(el: HTMLBaseElement | string, spec: any, opt: EmbedOptions): Promise<{} | { view: any; spec: any; }> {
   try {
     opt = opt || {};
     const actions  = opt.actions !== undefined ? opt.actions : true;
